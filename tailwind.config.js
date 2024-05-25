@@ -1,11 +1,25 @@
 /** @type {import('tailwindcss').Config} */
+
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    screens: {
+      'xs': '475px',
+      ...defaultTheme.screens,
+    },
+    extend: {
+      colors: {
+        lite: "#AEC3B0",
+        toolite: "#EFF6E0",
+        dark: "#124559",
+        toodark: "#01161E"
+      }
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 }

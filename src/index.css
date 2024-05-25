@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply border-dark shadow-lg focus:ring-toodark placeholder:text-lite text-toodark font-bold
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    @apply border-2 border-toodark text-red-500 focus:ring focus:ring-dark
+  }
+}
+
 @layer components {
   .max-width {
     @apply max-w-4xl mx-auto
@@ -13,5 +39,9 @@
 
   .center-div {
     @apply min-h-[calc(100vh-4rem)] items-center justify-center flex flex-col
+  }
+
+  .btn {
+    @apply outline-none px-4 py-2 bg-toolite text-toodark hover:bg-lite hover:text-dark font-bold
   }
 }
