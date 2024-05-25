@@ -1,16 +1,41 @@
 import { Link, useMatch, useNavigate } from "react-router-dom";
-import addProduct from "./helpers/addProduct";
 import { useProductsContext } from "../hooks/useProductsContext";
+import validation from "./helpers/validation.js";
+import API from "../../api.js";
 
 function Header() {
-    const { setShowModal, setToDelete } = useProductsContext();
+    const navigate = useNavigate();
+    const { setShowModal, setToDelete, products } = useProductsContext();
 
     const match = useMatch("/");
-    const navigate = useNavigate();
 
     const onAddProduct = () => {
-        let form = document.getElementById("product-form");
-        console.log(form);
+        let form = document.forms["product-form"];
+        const formData = new FormData(form);
+        const obj = {};
+        for (const pair of formData.entries()) {
+            obj[pair[0]] = pair[1]
+        }
+        console.log(obj);
+        const error = validation(obj, products);
+        if (error) {
+            console.log(error)
+            return
+        } else {
+            const fetchData = async () => {
+                try {
+                    await fetch(`${API}/add-product`, {
+                        method: "POST",
+                        body: JSON.stringify(obj)
+                    }).then(() => {
+                        navigate("/")
+                    })
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            fetchData();
+        }
     }
 
     const onDelete = () => {
@@ -33,7 +58,7 @@ function Header() {
                 <div className="flex items-center justify-center space-x-5">
                     <div>
                         {
-                            match ? <Link className="btn" to={"add-product"}>Add</Link> : <button onClick={onAddProduct} className="btn">Save</button>
+                            match ? <Link className="btn" to={"add-product"}>Add</Link> : <button onClick={onAddProduct} type="submit" className="btn">Save</button>
                         }
                     </div>
                     <div>

@@ -1,6 +1,4 @@
-const Book = (props) => {
-    const obj = props;
-    const { handleChange } = obj;
+const Book = () => {
     return (
         <fieldset>
             <div className="bg-lite p-5">
@@ -11,10 +9,9 @@ const Book = (props) => {
                         placeholder="#weight"
                         id="weight"
                         name="weight"
-                        onChange={handleChange}
                     />
                 </div>
-                <p className="information">Please provide weight of the book in KG's</p>
+                <p className="information">Please provide weight of the book in KG&#39;s</p>
             </div>
         </fieldset >
     )
