@@ -6,12 +6,12 @@ const Dvd = () => {
                     <input
                         type="number"
                         min={1}
-                        placeholder="#size"
+                        placeholder="Size"
                         id="size"
                         name="size"
                     />
                 </div>
-                <p className="information">Please provide size in MB</p>
+                <p className="information">Please provide Disc size in MB</p>
             </div>
         </fieldset>
     )

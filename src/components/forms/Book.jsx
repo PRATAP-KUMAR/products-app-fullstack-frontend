@@ -6,12 +6,12 @@ const Book = () => {
                     <input
                         type="number"
                         min={1}
-                        placeholder="#weight"
+                        placeholder="Weight in Grams"
                         id="weight"
                         name="weight"
                     />
                 </div>
-                <p className="information">Please provide weight of the book in KG&#39;s</p>
+                <p className="information">Please provide weight of the book in Grams&#39;s</p>
             </div>
         </fieldset >
     )

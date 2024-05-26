@@ -49,24 +49,24 @@ function Home() {
                 products && products.length !== 0 &&
                 <div className="bg-toolite">
                     <div className="relative max-width min-height p-5 bg-lite justify-center">
-                        <div className="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 items-center justify-content">
+                        <div className="grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 items-end justify-content">
                             {
                                 products.map((product, index) => (
                                     <div
                                         key={product.id}
-                                        className="relative flex flex-col space-y-2 bg-toolite p-5"
+                                        className="relative flex flex-col space-y-2 bg-toolite min-h-[200px] p-5"
                                     >
                                         <input type="checkbox" id={product.id}
                                             className="absolute top-2 right-2"
                                         />
-                                        <p>{product.sku}</p>
-                                        <p>{product.name}</p>
-                                        <p>{product.price}</p>
+                                        <p>SKU: {product.sku}</p>
+                                        <p>Name: {product.name}</p>
+                                        <p>Price: {product.price}</p>
                                         {product.type === 'Dvd' ? <p>Size: {product.size} MB</p>
                                             :
-                                            product.type === 'Book' ? <p>Weight: {product.weight} Kgs</p>
+                                            product.type === 'Book' ? <p>Weight: {product.weight} Grams</p>
                                                 :
-                                                product.type === 'Furniture' ? <p>Dimension: {product.length}x{product.width}x{product.height}</p>
+                                                product.type === 'Furniture' ? <p>Dimension: <span className="text-sm">{product.length}x{product.width}x{product.height}</span></p>
                                                     :
                                                     null
                                         }

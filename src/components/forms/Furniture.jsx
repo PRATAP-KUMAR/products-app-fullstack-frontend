@@ -6,26 +6,26 @@ const Furniture = () => {
                     <input
                         type="number"
                         min={1}
-                        placeholder="#height"
+                        placeholder="Height in CMs"
                         id="height"
                         name="height"
                     />
                     <input
                         type="number"
                         min={1}
-                        placeholder="#width"
+                        placeholder="Width in CMs"
                         id="width"
                         name="width"
                     />
                     <input
                         type="number"
                         min={1}
-                        placeholder="#length"
+                        placeholder="Length in CMs"
                         id="length"
                         name="length"
                     />
                 </div>
-                <p className="information">Please provide dimensions in HxWxL format</p>
+                <p className="information">Please provide dimensions in CM&quot;s in HxWxL format</p>
             </div>
         </fieldset>
     )
