@@ -1,7 +1,7 @@
 import { Link, useMatch, useNavigate } from "react-router-dom";
 import { useProductsContext } from "../hooks/useProductsContext";
-import validation from "./helpers/validation.js";
 import API from "../../api.js";
+import validation from "../helpers/validation.js";
 
 function Header() {
     const navigate = useNavigate();
