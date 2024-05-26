@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/pyv6lxu.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +21,7 @@
   [multiple],
   textarea,
   select {
-    @apply border-dark shadow-lg focus:ring-toodark placeholder:text-lite text-toodark font-bold
+    @apply placeholder:text-gray-300 font-custom text-toodark font-bold border-none focus:ring-2 focus:ring-toodark
   }
 
   [type='checkbox'],

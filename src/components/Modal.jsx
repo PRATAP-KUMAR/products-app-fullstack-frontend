@@ -24,7 +24,7 @@ function Modal(props) {
         <div
             onClick={onClose}
             className={`
-                absolute inset-0 w-full h-full flex text-center justify-center items-center transition-colors
+                fixed inset-0 z-60 w-full h-full flex text-center justify-center items-center transition-colors
                 ${open ? "visible bg-black/60" : "invisible"}
                 `}
         >

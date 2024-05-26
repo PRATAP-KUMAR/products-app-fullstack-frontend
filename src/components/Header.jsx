@@ -5,11 +5,12 @@ import API from "../../api.js";
 
 function Header() {
     const navigate = useNavigate();
-    const { setShowModal, setToDelete, products } = useProductsContext();
+    const { setShowModal, setToDelete, products, setError } = useProductsContext();
 
     const match = useMatch("/");
 
     const onAddProduct = () => {
+        setError(null);
         let form = document.forms["product-form"];
         const formData = new FormData(form);
         const obj = {};
@@ -19,7 +20,8 @@ function Header() {
         console.log(obj);
         const error = validation(obj, products);
         if (error) {
-            console.log(error)
+            setError(error);
+            console.log(error);
             return
         } else {
             const fetchData = async () => {
@@ -31,6 +33,7 @@ function Header() {
                         navigate("/")
                     })
                 } catch (error) {
+                    setError(error)
                     console.log(error);
                 }
             }
@@ -54,7 +57,7 @@ function Header() {
     return (
         <div className='bg-toodark sticky top-0 z-50'>
             <div className='max-width h-16 flex font-custom tod justify-between items-center p-5 text-toolite font-bold'>
-                <div className='flex text-lg'>{match ? "Products Lit" : "Add a product"}</div>
+                <div className='flex text-lg'>{match ? "Products List" : "Add a product"}</div>
                 <div className="flex items-center justify-center space-x-5">
                     <div>
                         {

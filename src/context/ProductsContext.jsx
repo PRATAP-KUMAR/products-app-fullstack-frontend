@@ -6,7 +6,7 @@ const ProductsContextProvider = (props) => {
     const obj = props;
     const { children } = obj;
 
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
     const [loading, setLoading] = useState(null);
     const [error, setError] = useState(null);
     const [showModal, setShowModal] = useState(null);

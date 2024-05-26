@@ -1,22 +1,22 @@
 const validation = (inputs, products) => {
     const type = inputs.type;
     if (type === undefined)
-        return "Please choose Type Switcher and fill the details undefined"
+        return "Please choose Type Switcher and fill the details"
 
     switch (type) {
         case 'Dvd': {
             if (!inputs.size || !inputs.sku || !inputs.name || !inputs.price)
-                return "Please add all fields and then save"
+                return "Please input all fields and then save"
             break
         }
         case 'Furniture': {
             if (!inputs.height || !inputs.width || !inputs.length || !inputs.sku || !inputs.name || !inputs.price)
-                return "Please add all fields and then save"
+                return "Please input all fields and then save"
             break
         }
         case 'Book': {
             if (!inputs.weight || !inputs.sku || !inputs.name || !inputs.price)
-                return "Please add all fields and then save book"
+                return "Please input all fields and then save"
             break
         }
         default: {

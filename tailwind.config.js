@@ -19,6 +19,10 @@ export default {
         toolite: "#EFF6E0",
         dark: "#124559",
         toodark: "#01161E"
+      },
+      fontFamily: {
+        sans: ['"palanquin-dark"', "sans-serif"],
+        custom: ['palanquin-dark', "sans-serif"]
       }
     },
   },

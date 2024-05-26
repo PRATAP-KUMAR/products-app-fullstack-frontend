@@ -2,12 +2,17 @@ import { useState } from "react";
 import Book from "../components/forms/Book";
 import Dvd from "../components/forms/Dvd";
 import Furniture from "../components/forms/Furniture";
+import { useProductsContext } from "../hooks/useProductsContext";
 
 function AddProduct() {
+    const { error, setError } = useProductsContext();
     const [subFormId, setSubFormId] = useState(null);
 
     const onChange = (e) => {
         e.preventDefault();
+        if (error) {
+            setError(null);
+        }
         setSubFormId(e.target.value);
     }
 
@@ -72,6 +77,10 @@ function AddProduct() {
                                     }
                                 </div>
                             </>
+                        }
+                        {
+                            error &&
+                            <div className="text-red-500 font-bold">{error}</div>
                         }
                     </div>
                 </fieldset>
