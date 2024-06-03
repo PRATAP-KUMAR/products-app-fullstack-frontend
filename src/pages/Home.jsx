@@ -66,7 +66,7 @@ function Home() {
                                             :
                                             product.type === 'Book' ? <p>Weight: {product.weight} Grams</p>
                                                 :
-                                                product.type === 'Furniture' ? <p>Dimension: <span className="text-sm">{product.height} h x {product.width} w x {product.length} l in CM&quot;s</span></p>
+                                                product.type === 'Furniture' ? <p>Dimension: <span className="text-sm">{product.height} (h) x {product.width} (w) x {product.length} (l) in CM&apos;s</span></p>
                                                     :
                                                     null
                                         }
