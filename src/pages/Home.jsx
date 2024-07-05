@@ -61,7 +61,7 @@ function Home() {
                                         />
                                         <p>SKU: {product.sku}</p>
                                         <p>Name: {product.name}</p>
-                                        <p>Price: {product.price}</p>
+                                        <p>Price: ${product.price}</p>
                                         {product.type === 'Dvd' ? <p>Size: {product.size} MB</p>
                                             :
                                             product.type === 'Book' ? <p>Weight: {product.weight} Grams</p>
